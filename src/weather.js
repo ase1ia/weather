@@ -24,7 +24,8 @@ class Weather extends Component {
         this.setState({
             loader: true
         }, () => {
-            {fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.apiKey}&units=metric`)
+            {
+                fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.apiKey}&units=metric`)
                     .then(res => res.json())
                     .then(data => {
                         if(data.cod === 200){
@@ -38,7 +39,8 @@ class Weather extends Component {
                         )
                         
 
-                    });}
+                    });
+            }
         })
     };
     
